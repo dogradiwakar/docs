@@ -3,9 +3,6 @@ site_url: https://dogradiwakar.github.io/
 site_author: Jacek Laskowski
 site_description: Demystifying inner-workings of Apache Spark
 
-repo_name: spark-internals
-repo_url: https://dogradiwakar.github.io/
-edit_uri: edit/main/docs/
 
 nav:
     - Home: index.md
