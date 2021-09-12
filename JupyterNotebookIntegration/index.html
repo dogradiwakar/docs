@@ -458,53 +458,53 @@
 <p>Go to <a href="https://spark.apache.org/downloads.html">https://spark.apache.org/downloads.html</a> and download latest Spark file .</p>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/2.png" /></p>
 <p>Unzip it and Update Bash profile:</p>
-<div class="highlight"><pre><span></span><code>tar -xzf spark-3.1.1-bin-hadoop2.7.tgz`
+<div class="highlight"><pre><span></span><code>tar -xzf spark-3.1.1-bin-hadoop2.7.tgz<span class="sb">`</span>
 </code></pre></div>
 <p>Configure Path</p>
-<div class="highlight"><pre><span></span><code>nano ~/.bashrc`
+<div class="highlight"><pre><span></span><code>nano ~/.bashrc<span class="sb">`</span>
 </code></pre></div>
 <p>Add below to bash profile
-<div class="highlight"><pre><span></span><code>export SPARK_HOME=/home/diwakar/Downloads/spark-3.1.1
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">SPARK_HOME</span><span class="o">=</span>/home/diwakar/Downloads/spark-3.1.1
 
-export PATH=$SPARK_HOME/bin:$PATH
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$SPARK_HOME</span>/bin:<span class="nv">$PATH</span>
 </code></pre></div></p>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/3.png" /></p>
 <h2 id="configure-pyspark-driver">Configure PySpark driver<a class="headerlink" href="#configure-pyspark-driver" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>nano ~/.bashrc`
+<div class="highlight"><pre><span></span><code>nano ~/.bashrc<span class="sb">`</span>
 </code></pre></div>
 <p>Add below to the environment variables</p>
-<div class="highlight"><pre><span></span><code>export PYSPARK_DRIVER_PYTHON=jupyter
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PYSPARK_DRIVER_PYTHON</span><span class="o">=</span>jupyter
 
-export PYSPARK_DRIVER_PYTHON_OPTS=&#39;notebook
+<span class="nb">export</span> <span class="nv">PYSPARK_DRIVER_PYTHON_OPTS</span><span class="o">=</span><span class="err">&#39;</span>notebook
 </code></pre></div>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/4.png" /></p>
 <p>Run "pyspark" in the window to start the jupyter notebook</p>
 <p>Run below code to test</p>
-<div class="highlight"><pre><span></span><code>from pyspark.sql.types import StructType, StructField, FloatType, BooleanType
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">StructField</span><span class="p">,</span> <span class="n">FloatType</span><span class="p">,</span> <span class="n">BooleanType</span>
 
-from pyspark.sql.types import DoubleType, IntegerType, StringType
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">DoubleType</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">StringType</span>
 
-import pyspark
+<span class="kn">import</span> <span class="nn">pyspark</span>
 
-from pyspark import SQLContext
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SQLContext</span>
 
-conf = pyspark.SparkConf()
+<span class="n">conf</span> <span class="o">=</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">SparkConf</span><span class="p">()</span>
 
-sc = pyspark.SparkContext.getOrCreate(conf=conf)
-sqlcontext = SQLContext(sc)
+<span class="n">sc</span> <span class="o">=</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">SparkContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">conf</span><span class="p">)</span>
+<span class="n">sqlcontext</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
 
-schema = StructType([
-    StructField(&quot;sales&quot;, IntegerType(),True),
-    StructField(&quot;sales person&quot;, StringType(),True)
-])
+<span class="n">schema</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span>
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;sales&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;sales person&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">])</span>
 
-data = ([(10, &#39;Walker&#39;),
-        ( 20, &#39;Stepher&#39;)
-        ])
+<span class="n">data</span> <span class="o">=</span> <span class="p">([(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Walker&#39;</span><span class="p">),</span>
+        <span class="p">(</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Stepher&#39;</span><span class="p">)</span>
+        <span class="p">])</span>
 
-df=sqlcontext.createDataFrame(data,schema=schema)
+<span class="n">df</span><span class="o">=</span><span class="n">sqlcontext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">)</span>
 
-df.show()
+<span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/5.png" /></p>
                 
