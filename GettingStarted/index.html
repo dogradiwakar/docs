@@ -11,14 +11,14 @@
         <meta name="author" content="Diwakar Dogra">
       
       
-        <link rel="canonical" href="https://dogradiwakar.github.io/Overview/">
+        <link rel="canonical" href="https://dogradiwakar.github.io/GettingStarted/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
-        <title>**Introduction** - Apache Spark</title>
+        <title>Overview - Apache Spark</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#downloading-apache-spark" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              **Introduction**
+              Overview
             
           </span>
         </div>
@@ -219,13 +219,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../GettingStarted/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Apache Spark
       </a>
     </li>
@@ -297,12 +299,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Apache Spark
@@ -318,11 +322,61 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../GettingStarted/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Overview
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-apache-spark" class="md-nav__link">
+    Downloading Apache Spark
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spark-directories-and-files" class="md-nav__link">
+    Spark Directories and Files .
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-spark-or-pyspark-shell" class="md-nav__link">
+    Using the Spark or Pyspark Shell
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -349,8 +403,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -359,50 +411,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-spark" class="md-nav__link">
-    Why Spark?
+  <a href="#downloading-apache-spark" class="md-nav__link">
+    Downloading Apache Spark
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#apache-spark-components-as-a-unified-stack" class="md-nav__link">
-    Apache Spark Components as a Unified Stack
+  <a href="#spark-directories-and-files" class="md-nav__link">
+    Spark Directories and Files .
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#apache-sparks-distributed-execution-model" class="md-nav__link">
-    Apache Spark’s Distributed Execution Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#distributed-data-and-partitions" class="md-nav__link">
-    Distributed Data and Partitions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-spark-application-concepts" class="md-nav__link">
-    Understanding Spark Application Concepts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformations-actions-and-lazy-executions" class="md-nav__link">
-    Transformations Actions and Lazy Executions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#narrow-and-wide-transformations" class="md-nav__link">
-    Narrow and Wide Transformations
+  <a href="#using-the-spark-or-pyspark-shell" class="md-nav__link">
+    Using the Spark or Pyspark Shell
   </a>
   
 </li>
@@ -419,145 +443,44 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/dogradiwakar/docs/edit/main/docs/Overview.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/dogradiwakar/docs/edit/main/docs/GettingStarted.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<h2 id="why-spark"><strong>Why Spark?</strong><a class="headerlink" href="#why-spark" title="Permanent link">&para;</a></h2>
-<p>Hadoop was the first version of distributed computing</p>
-<p>Issues with HDFS</p>
-<ul>
-<li>Hard to manage and administer</li>
-<li>Batch processing using Map Reduce</li>
-<li>Large Datasets were written to disk for subsequent stages of operation which meant high i/o.</li>
-<li>OK for batch processing but was slow while doing Machine learning / Streaming</li>
-</ul>
-<p>Spark was created in order to overcome these obstacles .</p>
-<p><a href="https://spark.apache.org/">Apache Spark</a> is a unified engine designed for large-scale distributed data processing, on premises in data centers or in the cloud.</p>
-<p>Spark provides in-memory storage for intermediate computations, making it much faster than Hadoop Map Reduce. It incorporates libraries with composable APIs for machine learning (MLlib), SQL for interactive queries (Spark SQL), stream processing (Structured Streaming) for interacting with real-time data, and graph processing (GraphX).</p>
-<p>Spark’s design philosophy centers around four key characteristics:</p>
-<p><strong>Speed</strong>
--   The Spark framework is optimized to benefit from the cheap commodity hardware nowadays (CPU / RAM)
--   Spark builds its query as Directed acrylic graph (DAG) which constructs an efficient computational graph that can be decomposed into tasks and then can be executed in parallel across the workers in cluster .
--   As data is retained in memory with limited disk i/o it has a huge performance boost .</p>
-<p><strong>Ease of use</strong>
--   All the high level abstractions such as data frames/datasets are built on top of simple logical structure called RDD.
--   This eventually leads to a simple programming model .</p>
-<p><strong>Modularity</strong>
--   Supports Scala/Java/Python/R
--   All the libraries are well documented and are unified
--   We can write a single application to do ML/Streaming in one go .</p>
-<p><strong>Extensibility</strong>
--   Focuses on parallel computation rather than storage
--   Decouple storage and computation
--   Supports many data sources and targets Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more—and process it all in memory.
--   The community of Spark developers maintains a list of <a href="https://oreil.ly/2tIVP">third-party Spark packages</a> as part of the growing ecosystem</p>
-<h2 id="apache-spark-components-as-a-unified-stack"><strong>Apache Spark Components as a Unified Stack</strong><a class="headerlink" href="#apache-spark-components-as-a-unified-stack" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/docs/Overview/overview.png" /></p>
-<p>Spark has Four major components :</p>
-<p>Each of these components is separate in spark core engine So in whichever language you write the code Python/R the core decomposes it into highly compact byte code that is executed in worker's JVM across the cluster .</p>
-<p><strong>Spark SQL:</strong></p>
-<ul>
-<li>Works Well with Structured Data (RDBMS, csv, parquet , AVRO, ORC)</li>
-<li>Used to Read Data from RDBMS or structured data (csv, text, json etc) and create permanent / temporary tables in spark.</li>
-<li>Can be used to read data from dataframe .</li>
-<li>Useful to run SQL type queries</li>
-</ul>
-<p><strong>Spark MLib</strong></p>
-<ul>
-<li>Mlib provides many popular ML algorithms built on top of high level DataFrame based API to build models .</li>
-<li>These API allow to extract or transform features , build pipelines and persist models during deployment .</li>
-</ul>
-<p><strong>Spark Structured Streaming</strong></p>
-<ul>
-<li>Continuous streaming model where a stream of continuous streaming data can be consumed .</li>
-<li>Developers can treat these streams as tables and query them.</li>
-<li>Used to combine and react in real time to both static data and streaming data from engines like Apache Kafka , kinesis and other data sources .</li>
-</ul>
-<p><strong>GraphX</strong></p>
-<ul>
-<li>Library for manipulating Graphs and perform graph parallel computations .</li>
-</ul>
-<h2 id="apache-sparks-distributed-execution-model"><strong>Apache Spark’s Distributed Execution Model</strong><a class="headerlink" href="#apache-sparks-distributed-execution-model" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/docs/Overview/2.png" /></p>
-<p><strong>Spark Driver :</strong></p>
-<ul>
-<li>Instantiates a spark Session</li>
-<li>It Communicates with cluster manager , requests resources from Cluster Manager for spark execution (JVM) , transforms spark operations into DAG, schedules operations and co-ordinates with executors .</li>
-</ul>
-<p><strong>Spark Session</strong></p>
-<ul>
-<li>Uniform conduit for all spark operations and data</li>
-<li>Used for creating JVM parameters , define Dataframe , Datasets , read data sources , access catalog metadata and issues SQL queries .</li>
-<li>Entry point for all Spark functionality</li>
-<li>Can be accessed using global variable spark or using sc .</li>
-</ul>
-<p><strong>Cluster Manager</strong></p>
-<ul>
-<li>Responsible for managing and allocating resources for the cluster</li>
-<li>
-<p>Spark supports 4 cluster managers</p>
-</li>
-<li>
-<p>In built Standalone</p>
-</li>
-<li>Apache Hadoop Yarn</li>
-<li>Apache Mesos</li>
-<li>Kubernetes
-<img alt="" src="/docs/Overview/3.png" /></li>
-</ul>
-<p><strong>Spark Executor</strong></p>
-<ul>
-<li>Runs on each worker node in the cluster</li>
-<li>Communicates with driver program and execute tasks on the worker nodes</li>
-</ul>
-<h2 id="distributed-data-and-partitions"><strong>Distributed Data and Partitions</strong><a class="headerlink" href="#distributed-data-and-partitions" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Actual Physical data is stored as partitions</li>
-<li>Spark treats each partition as a dataframe in memory</li>
-<li>Spark Executor reads the data from its closest partition</li>
-<li>Partitioning allows parallelism as Each core in partition is assigned to its own data partition to work with .</li>
-</ul>
-<p><img alt="" src="/docs/Overview/4.png" /></p>
-<p>Partitioning allows efficient parallelism . In distributed environment spark executor reads data from the nearest partition allowing efficient parallelism .
-<img alt="" src="/docs/Overview/5.png" /></p>
-<p>For example, this code snippet will break up the physical data stored across clusters into eight partitions, and each executor will get one or more partitions to read into its memory:</p>
-<p>log_df = spark.read.text("path_to_large_text_file").repartition(8)<br />
-print(log_df.rdd.getNumPartitions())</p>
-<h2 id="understanding-spark-application-concepts"><strong>Understanding Spark Application Concepts</strong><a class="headerlink" href="#understanding-spark-application-concepts" title="Permanent link">&para;</a></h2>
-<p>Key terminologies</p>
-<ul>
-<li>Application : User Program consisting of driver and spark session .</li>
-<li>Spark Session : Entry point to interact with Spark functionality .</li>
-<li>Job : Parallel Computation consisting of many tasks</li>
-<li>Stage : Each Job is divided into smaller tasks called stages</li>
-<li>Task : Single unit of work</li>
-</ul>
-<p><strong>Spark Application and Spark Session</strong>
-At the core of Spark Application is the spark driver program which creates a SparkSession object .
-While working with an interactive shell Spark session is created automatically
-<img alt="" src="/docs/Overview/6.png" /></p>
-<p><strong>Spark Jobs</strong>
-When we invoke commands through spark-shell the driver converts the spark application into various spark jobs which in turn converts each job into multiple DAG's .
-<img alt="" src="/docs/Overview/7.png" /></p>
-<p><strong>Spark Stages</strong>
-As park of DAG nodes stages re created based on the operations which needs to be performed .
-<img alt="" src="/docs/Overview/8.png" /></p>
-<p><strong>Spark Tasks</strong>
-Each stage is comprised of multiple tasks which is a unit of execution which gets federated across the spark executors . Each task maps to a single core and works on a single partition of data .</p>
-<p>For an executor with 16 core 16 or more tasks would run working on 16 or more partitions in parallel .
-<img alt="" src="/docs/Overview/9.png" /></p>
-<h2 id="transformations-actions-and-lazy-executions"><strong>Transformations Actions and Lazy Executions</strong><a class="headerlink" href="#transformations-actions-and-lazy-executions" title="Permanent link">&para;</a></h2>
-<p>Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe</p>
-<p>All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .
-Actions : Anything which triggers execution of a transformation like show, count etc.
-<img alt="" src="/docs/Overview/10.png" /></p>
-<h2 id="narrow-and-wide-transformations"><strong>Narrow and Wide Transformations</strong><a class="headerlink" href="#narrow-and-wide-transformations" title="Permanent link">&para;</a></h2>
-<p><strong>Narrow Transformation</strong> : Where a single output is partition can be computed from a single input partition . E.g. filter(), contains() operate on single partition .</p>
-<p><strong>Wide Transformations</strong> : Where a shuffle of partitions happens . E.g. groupby(), orderby() leads data to be read from many partitions combine them and then written to disk .</p>
-<p><img alt="" src="/docs/Overview/11.png" /></p>
+                  <h1>Overview</h1>
+                
+                <h2 id="downloading-apache-spark">Downloading Apache Spark<a class="headerlink" href="#downloading-apache-spark" title="Permanent link">&para;</a></h2>
+<p>Go to <a href="https://spark.apache.org/downloads.html">https://spark.apache.org/downloads.html</a> and download latest Spark file .</p>
+<p><img alt="" src="/docs/GettingStarted/1.png" /></p>
+<p>This will download all the binaries which will be required to run spark in local mode . In case of an existing Hadoop installation we would need to select Hadoop version from the dropdown .</p>
+<h2 id="spark-directories-and-files">Spark Directories and Files .<a class="headerlink" href="#spark-directories-and-files" title="Permanent link">&para;</a></h2>
+<p>On extracting the spark tar file , below would be the directories which would be created .</p>
+<p><img alt="" src="/docs/GettingStarted/2.png" /></p>
+<div class="codehilite"><pre><span></span><code>• <span class="nv">Readme</span>.<span class="nv">md</span>: <span class="nv">contains</span> <span class="nv">instructions</span> <span class="nv">on</span> <span class="nv">how</span> <span class="nv">to</span> <span class="nv">use</span> <span class="nv">spark</span> <span class="nv">shell</span> , <span class="nv">build</span> <span class="nv">spark</span> <span class="nv">from</span> <span class="nv">source</span> <span class="o">&amp;</span> <span class="nv">Contains</span> <span class="nv">links</span> <span class="nv">to</span> <span class="nv">documentation</span>
+• <span class="nv">bin</span> : <span class="nv">contains</span> <span class="nv">scripts</span> <span class="nv">to</span> <span class="nv">interact</span> <span class="nv">with</span> <span class="nv">spark</span> , <span class="nv">contains</span> <span class="nv">shells</span> <span class="nv">and</span> <span class="nv">executables</span>
+• <span class="nv">sbin</span>: <span class="nv">contains</span> <span class="nv">all</span> <span class="nv">the</span> <span class="nv">scripts</span> <span class="nv">required</span> <span class="k">for</span> <span class="nv">administrative</span> <span class="nv">purposes</span> <span class="nv">such</span> <span class="nv">as</span> <span class="nv">starting</span> <span class="o">/</span> <span class="nv">stopping</span> <span class="nv">spark</span> .
+• <span class="nv">kubernetes</span> : <span class="nv">contains</span> <span class="nv">docker</span> <span class="nv">files</span> <span class="k">for</span> <span class="nv">creating</span> <span class="nv">docker</span> <span class="nv">images</span> <span class="k">for</span> <span class="nv">spark</span> <span class="nv">distribution</span> <span class="nv">on</span> <span class="nv">a</span> <span class="nv">kubernetes</span> <span class="nv">cluster</span>
+• <span class="nv">data</span> : <span class="nv">contains</span> .<span class="nv">txt</span> <span class="nv">files</span> <span class="nv">that</span> <span class="nv">serve</span> <span class="nv">as</span> <span class="nv">input</span> <span class="k">for</span> <span class="nv">spark</span> <span class="nv">components</span> <span class="nv">such</span> <span class="nv">as</span> <span class="nv">MLib</span> , <span class="nv">structured</span> <span class="nv">streaming</span> , <span class="nv">GraphX</span> <span class="nv">etc</span> .
+• <span class="nv">examples</span> : <span class="nv">contains</span> <span class="nv">example</span> <span class="nv">Java</span> , <span class="nv">R</span> , <span class="nv">python</span> <span class="nv">files</span> .
+</code></pre></div>
+
+<h2 id="using-the-spark-or-pyspark-shell">Using the Spark or Pyspark Shell<a class="headerlink" href="#using-the-spark-or-pyspark-shell" title="Permanent link">&para;</a></h2>
+<p>Check the Java installation as it is a pre-requisite run java-version to check
+<img alt="" src="/docs/GettingStarted/3.png" /></p>
+<p>Run update &amp; then install Java</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get install openjdk-8-jdk
+<img alt="" src="/docs/GettingStarted/4.png" /></p>
+<p>cd into the bin directory and type pyspark to stark the shell .</p>
+<p>./pyspark</p>
+<p><img alt="" src="/docs/GettingStarted/5.png" /></p>
+<p>Similarly to start spark-shell run below command</p>
+<p>./spark-shell
+<img alt="" src="/docs/GettingStarted/6.png" /></p>
+<p>Spark UI
+Graphical interface used to inspect or monitor spark applications . Runs on <a href="http://localhost:4040/">http://localhost:4040/</a></p>
+<p><img alt="" src="/docs/GettingStarted/7.png" /></p>
                 
               
               
@@ -578,6 +501,26 @@ Actions : Anything which triggers execution of a transformation like show, count
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
