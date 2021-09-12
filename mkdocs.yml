@@ -16,7 +16,7 @@ nav:
   - Apache Spark:
     - Overview: Overview.md
     - GettingStarted: GettingStarted.md
-    
+    - Jupyter Notebook Integration:JupyterNotebookIntegration.md
     
     
     
