@@ -6,6 +6,8 @@ site_description: Demystifying inner-workings of Apache Spark
 
 nav:
     - Home: index.md
+    - Apache Spark:
+        - GettingStarted: GettingStarted.md
     - About: about.md
 theme:
   name: material
