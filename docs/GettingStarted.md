@@ -42,7 +42,7 @@ Spark’s design philosophy centers around four key characteristics:
 
 **Apache Spark Components as a Unified Stack**
 
-![overview](/images/2021/09/overview.png)
+![overview](/docs/blob/main/images/2021/09/overview.png)
 
 Spark has Four major components :
 
