@@ -550,8 +550,8 @@ markdown_extensions:
 
 plugins:
   - search
-  - minify:
-      minify_html: true
+  #- minify:
+   #   minify_html: true
   - awesome-pages
   - macros
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
