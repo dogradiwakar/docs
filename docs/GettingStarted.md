@@ -1,7 +1,7 @@
 
-#**Introduction**
+**Introduction**
 
-##**Why Spark?**
+**Why Spark?**
 
 Hadoop was the first version of distributed computing
 
@@ -40,10 +40,9 @@ Spark’s design philosophy centers around four key characteristics:
 -   Supports many data sources and targets Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more—and process it all in memory.
 -   The community of Spark developers maintains a list of [third-party Spark packages](https://oreil.ly/2tIVP) as part of the growing ecosystem
 
-##**Apache Spark Components as a Unified Stack**
+**Apache Spark Components as a Unified Stack**
 
-![overview](images/2021/09/overview.png)
-![dd.](/images/2021/09/overview.png)
+![](/docs/GettinsStarted/overview.png)
 
 
 Spark has Four major components :
@@ -72,7 +71,7 @@ Each of these components is separate in spark core engine So in whichever langua
 
 -   Library for manipulating Graphs and perform graph parallel computations .
 
-##**Apache Spark’s Distributed Execution Model**
+**Apache Spark’s Distributed Execution Model**
 
 (file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image002.png)
 
@@ -121,7 +120,7 @@ For example, this code snippet will break up the physical data stored across clu
 log_df = spark.read.text("path_to_large_text_file").repartition(8)  
 print(log_df.rdd.getNumPartitions())
 
-##**Understanding Spark Application Concepts**
+**Understanding Spark Application Concepts**
 
 Key terminologies
 
@@ -150,14 +149,14 @@ Each stage is comprised of multiple tasks which is a unit of execution which get
 For an executor with 16 core 16 or more tasks would run working on 16 or more partitions in parallel .
 (file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image009.png)
 
-##**Transformations Actions and Lazy Executions**
+**Transformations Actions and Lazy Executions**
 Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe
 
 All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .
 Actions : Anything which triggers execution of a transformation like show, count etc.
 (file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image010.png)
 
-##**Narrow and Wide Transformations**
+**Narrow and Wide Transformations**
 
 **Narrow Transformation** : Where a single output is partition can be computed from a single input partition . E.g. filter(), contains() operate on single partition .
 
