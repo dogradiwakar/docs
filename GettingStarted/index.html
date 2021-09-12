@@ -10,7 +10,7 @@
       
       
       
-        <meta name="author" content="Jacek Laskowski">
+        <meta name="author" content="Diwakar Dogra">
       
       
         <link rel="canonical" href="https://dogradiwakar.github.io/GettingStarted/">
@@ -65,11 +65,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#introduction" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -225,77 +220,10 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          GettingStarted
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         GettingStarted
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-spark" class="md-nav__link">
-    Why Spark?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache-spark-components-as-a-unified-stack" class="md-nav__link">
-    Apache Spark Components as a Unified Stack
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache-sparks-distributed-execution-model" class="md-nav__link">
-    Apache Spark’s Distributed Execution Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-spark-application-concepts" class="md-nav__link">
-    Understanding Spark Application Concepts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformations-actions-and-lazy-executions" class="md-nav__link">
-    Transformations Actions and Lazy Executions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#narrow-and-wide-transformations" class="md-nav__link">
-    Narrow and Wide Transformations
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -329,81 +257,16 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-spark" class="md-nav__link">
-    Why Spark?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache-spark-components-as-a-unified-stack" class="md-nav__link">
-    Apache Spark Components as a Unified Stack
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache-sparks-distributed-execution-model" class="md-nav__link">
-    Apache Spark’s Distributed Execution Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-spark-application-concepts" class="md-nav__link">
-    Understanding Spark Application Concepts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformations-actions-and-lazy-executions" class="md-nav__link">
-    Transformations Actions and Lazy Executions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#narrow-and-wide-transformations" class="md-nav__link">
-    Narrow and Wide Transformations
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="introduction"><strong>Introduction</strong></h1>
-<h2 id="why-spark"><strong>Why Spark?</strong></h2>
+                  <h1>GettingStarted</h1>
+                
+                <p><strong>Introduction</strong></p>
+<p><strong>Why Spark?</strong></p>
 <p>Hadoop was the first version of distributed computing</p>
 <p>Issues with HDFS</p>
 <ul>
@@ -432,9 +295,8 @@
 -   Decouple storage and computation
 -   Supports many data sources and targets Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more—and process it all in memory.
 -   The community of Spark developers maintains a list of <a href="https://oreil.ly/2tIVP">third-party Spark packages</a> as part of the growing ecosystem</p>
-<h2 id="apache-spark-components-as-a-unified-stack"><strong>Apache Spark Components as a Unified Stack</strong></h2>
-<p><img alt="overview" src="images/2021/09/overview.png" />
-<img alt="dd." src="/images/2021/09/overview.png" /></p>
+<p><strong>Apache Spark Components as a Unified Stack</strong></p>
+<p><img alt="" src="/docs/GettinsStarted/overview.png" /></p>
 <p>Spark has Four major components :</p>
 <p>Each of these components is separate in spark core engine So in whichever language you write the code Python/R the core decomposes it into highly compact byte code that is executed in worker's JVM across the cluster .</p>
 <p><strong>Spark SQL:</strong></p>
@@ -459,7 +321,7 @@
 <ul>
 <li>Library for manipulating Graphs and perform graph parallel computations .</li>
 </ul>
-<h2 id="apache-sparks-distributed-execution-model"><strong>Apache Spark’s Distributed Execution Model</strong></h2>
+<p><strong>Apache Spark’s Distributed Execution Model</strong></p>
 <p>(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image002.png)</p>
 <p><strong>Spark Driver :</strong></p>
 <ul>
@@ -505,7 +367,7 @@
 <p>For example, this code snippet will break up the physical data stored across clusters into eight partitions, and each executor will get one or more partitions to read into its memory:</p>
 <p>log_df = spark.read.text("path_to_large_text_file").repartition(8)<br />
 print(log_df.rdd.getNumPartitions())</p>
-<h2 id="understanding-spark-application-concepts"><strong>Understanding Spark Application Concepts</strong></h2>
+<p><strong>Understanding Spark Application Concepts</strong></p>
 <p>Key terminologies</p>
 <ul>
 <li>Application : User Program consisting of driver and spark session .</li>
@@ -528,12 +390,12 @@ As park of DAG nodes stages re created based on the operations which needs to be
 Each stage is comprised of multiple tasks which is a unit of execution which gets federated across the spark executors . Each task maps to a single core and works on a single partition of data .</p>
 <p>For an executor with 16 core 16 or more tasks would run working on 16 or more partitions in parallel .
 (file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image009.png)</p>
-<h2 id="transformations-actions-and-lazy-executions"><strong>Transformations Actions and Lazy Executions</strong></h2>
-<p>Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe</p>
+<p><strong>Transformations Actions and Lazy Executions</strong>
+Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe</p>
 <p>All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .
 Actions : Anything which triggers execution of a transformation like show, count etc.
 (file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image010.png)</p>
-<h2 id="narrow-and-wide-transformations"><strong>Narrow and Wide Transformations</strong></h2>
+<p><strong>Narrow and Wide Transformations</strong></p>
 <p><strong>Narrow Transformation</strong> : Where a single output is partition can be computed from a single input partition . E.g. filter(), contains() operate on single partition .</p>
 <p><strong>Wide Transformations</strong> : Where a shuffle of partitions happens . E.g. groupby(), orderby() leads data to be read from many partitions combine them and then written to disk .</p>
 <p><img alt="" src="file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image011.png" /></p>
