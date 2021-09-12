@@ -473,7 +473,7 @@
 <li>Library for manipulating Graphs and perform graph parallel computations .</li>
 </ul>
 <h2 id="apache-sparks-distributed-execution-model"><strong>Apache Spark’s Distributed Execution Model</strong></h2>
-<p>(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image002.png)</p>
+<p><img alt="" src="/docs/GettinsStarted/2.png" /></p>
 <p><strong>Spark Driver :</strong></p>
 <ul>
 <li>Instantiates a spark Session</li>
@@ -498,7 +498,7 @@
 <li>Apache Hadoop Yarn</li>
 <li>Apache Mesos</li>
 <li>Kubernetes
-(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image003.png)</li>
+<img alt="" src="/docs/GettinsStarted/3.png" /></li>
 </ul>
 <p><strong>Spark Executor</strong></p>
 <ul>
@@ -512,9 +512,9 @@
 <li>Spark Executor reads the data from its closest partition</li>
 <li>Partitioning allows parallelism as Each core in partition is assigned to its own data partition to work with .</li>
 </ul>
-<p>(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image004.png)</p>
+<p><img alt="" src="/docs/GettinsStarted/4.png" /></p>
 <p>Partitioning allows efficient parallelism . In distributed environment spark executor reads data from the nearest partition allowing efficient parallelism .
-(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image005.png)</p>
+<img alt="" src="/docs/GettinsStarted/5.png" /></p>
 <p>For example, this code snippet will break up the physical data stored across clusters into eight partitions, and each executor will get one or more partitions to read into its memory:</p>
 <p>log_df = spark.read.text("path_to_large_text_file").repartition(8)<br />
 print(log_df.rdd.getNumPartitions())</p>
@@ -530,26 +530,26 @@ print(log_df.rdd.getNumPartitions())</p>
 <p><strong>Spark Application and Spark Session</strong>
 At the core of Spark Application is the spark driver program which creates a SparkSession object .
 While working with an interactive shell Spark session is created automatically
-(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image006.png)</p>
+<img alt="" src="/docs/GettinsStarted/6.png" /></p>
 <p><strong>Spark Jobs</strong>
 When we invoke commands through spark-shell the driver converts the spark application into various spark jobs which in turn converts each job into multiple DAG's .
-(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image007.png)</p>
+<img alt="" src="/docs/GettinsStarted/7.png" /></p>
 <p><strong>Spark Stages</strong>
 As park of DAG nodes stages re created based on the operations which needs to be performed .
-(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image008.png)</p>
+<img alt="" src="/docs/GettinsStarted/8.png" /></p>
 <p><strong>Spark Tasks</strong>
 Each stage is comprised of multiple tasks which is a unit of execution which gets federated across the spark executors . Each task maps to a single core and works on a single partition of data .</p>
 <p>For an executor with 16 core 16 or more tasks would run working on 16 or more partitions in parallel .
-(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image009.png)</p>
+<img alt="" src="/docs/GettinsStarted/9.png" /></p>
 <h2 id="transformations-actions-and-lazy-executions"><strong>Transformations Actions and Lazy Executions</strong></h2>
 <p>Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe</p>
 <p>All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .
 Actions : Anything which triggers execution of a transformation like show, count etc.
-(file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image010.png)</p>
+<img alt="" src="/docs/GettinsStarted/10.png" /></p>
 <h2 id="narrow-and-wide-transformations"><strong>Narrow and Wide Transformations</strong></h2>
 <p><strong>Narrow Transformation</strong> : Where a single output is partition can be computed from a single input partition . E.g. filter(), contains() operate on single partition .</p>
 <p><strong>Wide Transformations</strong> : Where a shuffle of partitions happens . E.g. groupby(), orderby() leads data to be read from many partitions combine them and then written to disk .</p>
-<p><img alt="" src="file:///C:/Users/Z58/AppData/Local/Temp/msohtmlclip1/02/clip_image011.png" /></p>
+<p><img alt="" src="/docs/GettinsStarted/11.png" /></p>
                 
               
               
