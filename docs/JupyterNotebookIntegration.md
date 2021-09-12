@@ -6,7 +6,7 @@ https://www.anaconda.com/products/individual
 
 Install Anaconda
 
-```text
+```bash
 bash Anaconda3-2021.05-Linux-x86_64.sh
 ```
 
@@ -21,18 +21,18 @@ Go to https://spark.apache.org/downloads.html and download latest Spark file .
 
 Unzip it and Update Bash profile:
 
-```text
+```bash
 tar -xzf spark-3.1.1-bin-hadoop2.7.tgz`
 ```
 
 Configure Path
 
-```text
+```bash
 nano ~/.bashrc`
 ```
 
 Add below to bash profile
-```text
+```bash
 export SPARK_HOME=/home/diwakar/Downloads/spark-3.1.1
 
 export PATH=$SPARK_HOME/bin:$PATH
@@ -43,13 +43,13 @@ export PATH=$SPARK_HOME/bin:$PATH
 
 ## Configure PySpark driver
 
-```text
+```bash
 nano ~/.bashrc`
 ```
 
 Add below to the environment variables
 
-```text
+```bash
 export PYSPARK_DRIVER_PYTHON=jupyter
 
 export PYSPARK_DRIVER_PYTHON_OPTS='notebook
@@ -61,7 +61,7 @@ Run "pyspark" in the window to start the jupyter notebook
 
 Run below code to test
 
-```text
+```python
 from pyspark.sql.types import StructType, StructField, FloatType, BooleanType
 
 from pyspark.sql.types import DoubleType, IntegerType, StringType

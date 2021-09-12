@@ -450,45 +450,63 @@
                 <h2 id="anaconda-installation">Anaconda Installation<a class="headerlink" href="#anaconda-installation" title="Permanent link">&para;</a></h2>
 <p>Download anaconda from below url
 <a href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></p>
-<p>Install Anaconda
-bash Anaconda3-2021.05-Linux-x86_64.sh</p>
+<p>Install Anaconda</p>
+<div class="highlight"><pre><span></span><code>bash Anaconda3-2021.05-Linux-x86_64.sh
+</code></pre></div>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/1.png" /></p>
 <h2 id="downloading-apache-spark">Downloading Apache Spark<a class="headerlink" href="#downloading-apache-spark" title="Permanent link">&para;</a></h2>
 <p>Go to <a href="https://spark.apache.org/downloads.html">https://spark.apache.org/downloads.html</a> and download latest Spark file .</p>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/2.png" /></p>
 <p>Unzip it and Update Bash profile:</p>
-<p>tar -xzf spark-3.1.1-bin-hadoop2.7.tgz</p>
+<div class="highlight"><pre><span></span><code>tar -xzf spark-3.1.1-bin-hadoop2.7.tgz`
+</code></pre></div>
 <p>Configure Path</p>
-<p>nano ~/.bashrc</p>
-<p>Add below to bash profile</p>
-<p>export SPARK_HOME=/home/diwakar/Downloads/spark-3.1.1
-export PATH=<span><span class="MathJax_Preview">SPARK_HOME/bin:</span><script type="math/tex">SPARK_HOME/bin:</script></span>PATH</p>
+<div class="highlight"><pre><span></span><code>nano ~/.bashrc`
+</code></pre></div>
+<p>Add below to bash profile
+<div class="highlight"><pre><span></span><code>export SPARK_HOME=/home/diwakar/Downloads/spark-3.1.1
+
+export PATH=$SPARK_HOME/bin:$PATH
+</code></pre></div></p>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/3.png" /></p>
 <h2 id="configure-pyspark-driver">Configure PySpark driver<a class="headerlink" href="#configure-pyspark-driver" title="Permanent link">&para;</a></h2>
-<p>nano ~/.bashrc</p>
+<div class="highlight"><pre><span></span><code>nano ~/.bashrc`
+</code></pre></div>
 <p>Add below to the environment variables</p>
-<p>export PYSPARK_DRIVER_PYTHON=jupyter
-export PYSPARK_DRIVER_PYTHON_OPTS='notebook'</p>
+<div class="highlight"><pre><span></span><code>export PYSPARK_DRIVER_PYTHON=jupyter
+
+export PYSPARK_DRIVER_PYTHON_OPTS=&#39;notebook
+</code></pre></div>
 <p><img alt="" src="/docs/JupyterNotebookIntegration/4.png" /></p>
 <p>Run "pyspark" in the window to start the jupyter notebook</p>
 <p>Run below code to test</p>
-<p>from pyspark.sql.types import StructType, StructField, FloatType, BooleanType
+<div class="highlight"><pre><span></span><code>from pyspark.sql.types import StructType, StructField, FloatType, BooleanType
+
 from pyspark.sql.types import DoubleType, IntegerType, StringType
-import pyspark</p>
-<p>from pyspark import SQLContext</p>
-<p>conf = pyspark.SparkConf()</p>
-<p>sc = pyspark.SparkContext.getOrCreate(conf=conf)
-sqlcontext = SQLContext(sc)</p>
-<p>schema = StructType([
-    StructField("sales", IntegerType(),True),
-    StructField("sales person", StringType(),True)
-])</p>
-<p>data = ([(10, 'Walker'),
-        ( 20, 'Stepher')
-        ])</p>
-<p>df=sqlcontext.createDataFrame(data,schema=schema)
+
+import pyspark
+
+from pyspark import SQLContext
+
+conf = pyspark.SparkConf()
+
+sc = pyspark.SparkContext.getOrCreate(conf=conf)
+sqlcontext = SQLContext(sc)
+
+schema = StructType([
+    StructField(&quot;sales&quot;, IntegerType(),True),
+    StructField(&quot;sales person&quot;, StringType(),True)
+])
+
+data = ([(10, &#39;Walker&#39;),
+        ( 20, &#39;Stepher&#39;)
+        ])
+
+df=sqlcontext.createDataFrame(data,schema=schema)
+
 df.show()
-<img alt="" src="/docs/JupyterNotebookIntegration/5.png" /></p>
+</code></pre></div>
+<p><img alt="" src="/docs/JupyterNotebookIntegration/5.png" /></p>
                 
               
               
