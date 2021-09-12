@@ -1,10 +1,10 @@
 site_name: Apache Spark
-site_url: https://dogradiwakar.github.io/docs/
+site_url: https://dogradiwakar.github.io/
 site_author: Jacek Laskowski
 site_description: Demystifying inner-workings of Apache Spark
 
 repo_name: spark-internals
-repo_url: https://dogradiwakar.github.io/docs/
+repo_url: https://dogradiwakar.github.io/
 edit_uri: edit/main/docs/
 theme:
   name: material
