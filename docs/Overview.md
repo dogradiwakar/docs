@@ -42,7 +42,7 @@ Spark’s design philosophy centers around four key characteristics:
 
 ## **Apache Spark Components as a Unified Stack**
 
-![](/docs/GettinsStarted/overview.png)
+![](/docs/Overview/overview.png)
 
 
 Spark has Four major components :
@@ -73,7 +73,7 @@ Each of these components is separate in spark core engine So in whichever langua
 
 ## **Apache Spark’s Distributed Execution Model**
 
-![](/docs/GettinsStarted/2.png)
+![](/docs/Overview/2.png)
 
 **Spark Driver :**
 
@@ -96,7 +96,7 @@ Each of these components is separate in spark core engine So in whichever langua
 -   Apache Hadoop Yarn
 -   Apache Mesos
 -   Kubernetes
-![](/docs/GettinsStarted/3.png)
+![](/docs/Overview/3.png)
 
 **Spark Executor**
 
@@ -110,10 +110,10 @@ Each of these components is separate in spark core engine So in whichever langua
 -   Spark Executor reads the data from its closest partition
 -   Partitioning allows parallelism as Each core in partition is assigned to its own data partition to work with .
 
-![](/docs/GettinsStarted/4.png)
+![](/docs/Overview/4.png)
 
 Partitioning allows efficient parallelism . In distributed environment spark executor reads data from the nearest partition allowing efficient parallelism .
-![](/docs/GettinsStarted/5.png)
+![](/docs/Overview/5.png)
 
 For example, this code snippet will break up the physical data stored across clusters into eight partitions, and each executor will get one or more partitions to read into its memory:
 
@@ -133,28 +133,28 @@ Key terminologies
 **Spark Application and Spark Session**
 At the core of Spark Application is the spark driver program which creates a SparkSession object .
 While working with an interactive shell Spark session is created automatically
-![](/docs/GettinsStarted/6.png)
+![](/docs/Overview/6.png)
 
 **Spark Jobs**
 When we invoke commands through spark-shell the driver converts the spark application into various spark jobs which in turn converts each job into multiple DAG's .
-![](/docs/GettinsStarted/7.png)
+![](/docs/Overview/7.png)
 
 **Spark Stages**
 As park of DAG nodes stages re created based on the operations which needs to be performed .
-![](/docs/GettinsStarted/8.png)
+![](/docs/Overview/8.png)
 
 **Spark Tasks**
 Each stage is comprised of multiple tasks which is a unit of execution which gets federated across the spark executors . Each task maps to a single core and works on a single partition of data .
 
 For an executor with 16 core 16 or more tasks would run working on 16 or more partitions in parallel .
-![](/docs/GettinsStarted/9.png)
+![](/docs/Overview/9.png)
 
 ## **Transformations Actions and Lazy Executions**
 Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe
 
 All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .
 Actions : Anything which triggers execution of a transformation like show, count etc.
-![](/docs/GettinsStarted/10.png)
+![](/docs/Overview/10.png)
 
 ## **Narrow and Wide Transformations**
 
@@ -162,4 +162,4 @@ Actions : Anything which triggers execution of a transformation like show, count
 
 **Wide Transformations** : Where a shuffle of partitions happens . E.g. groupby(), orderby() leads data to be read from many partitions combine them and then written to disk .
 
-![](/docs/GettinsStarted/11.png)
+![](/docs/Overview/11.png)
