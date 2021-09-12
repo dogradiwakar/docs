@@ -20,29 +20,34 @@ On extracting the spark tar file , below would be the directories which would be
 	• data : contains .txt files that serve as input for spark components such as MLib , structured streaming , GraphX etc .
 	• examples : contains example Java , R , python files .
 
-## Using the Spark or Pyspark Shell 
+## Using the Spark or Pyspark Shell
 
 Check the Java installation as it is a pre-requisite run java-version to check
 ![](/docs/GettingStarted/3.png)
 
 
 Run update & then install Java
-
+```bash
 sudo apt-get update
 
 sudo apt-get install openjdk-8-jdk
+```
+
 ![](/docs/GettingStarted/4.png)
 
 cd into the bin directory and type pyspark to stark the shell .
 
+```bash
 ./pyspark
-
+```
 ![](/docs/GettingStarted/5.png)
 
 
 Similarly to start spark-shell run below command
 
+```bash
 ./spark-shell
+```
 ![](/docs/GettingStarted/6.png)
 
 
