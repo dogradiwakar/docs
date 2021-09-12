@@ -14,7 +14,9 @@ copyright: Copyright &copy; 2021 Diwakar Dogra
 nav:
   - Home: index.md
   - Apache Spark:
-    - Overview: GettingStarted.md
+    - Overview: Overview.md
+    - GettingStarted: GettingStarted.md
+    
     
     
     
