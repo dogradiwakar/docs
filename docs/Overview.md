@@ -78,10 +78,13 @@ Each of these components is separate in spark core engine So in whichever langua
 **Spark Driver :**
 
 -   Instantiates a spark Session
+-   Maintains information about the spark application.
+-   It’s the heart of a Spark Application and maintains all relevant information during the lifetime of   the application.
 -   It Communicates with cluster manager , requests resources from Cluster Manager for spark execution (JVM) , transforms spark operations into DAG, schedules operations and co-ordinates with executors .
 
 **Spark Session**
 
+-   The Spark application is controlled using SparkSession.
 -   Uniform conduit for all spark operations and data
 -   Used for creating JVM parameters , define Dataframe , Datasets , read data sources , access catalog metadata and issues SQL queries .
 -   Entry point for all Spark functionality
@@ -102,13 +105,17 @@ Each of these components is separate in spark core engine So in whichever langua
 
 -   Runs on each worker node in the cluster
 -   Communicates with driver program and execute tasks on the worker nodes
+-   They have 2 major responsibilities
+  - Execute Code assigned to it by the driver
+  - Reporting state of computation on that executor back to the driver node .
 
 ## **Distributed Data and Partitions**
 
--   Actual Physical data is stored as partitions
+-   Actual Physical data is stored as partitions. It is a collection of rows that sit on one physical machine in your cluster.
 -   Spark treats each partition as a dataframe in memory
 -   Spark Executor reads the data from its closest partition
 -   Partitioning allows parallelism as Each core in partition is assigned to its own data partition to work with .
+-   If you have one partition, Spark will have a parallelism of only one, even if you have thousands of executors. If you have many partitions but only one executor, Spark will still have a parallelism of only one because there is only one computation resource.
 
 ![](/docs/Overview/4.png)
 
@@ -150,10 +157,21 @@ For an executor with 16 core 16 or more tasks would run working on 16 or more pa
 ![](/docs/Overview/9.png)
 
 ## **Transformations Actions and Lazy Executions**
-Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe
+Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe.
+
+Transformations are the core of how you express your business logic using Spark.
 
 All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .
+
+
+
 Actions : Anything which triggers execution of a transformation like show, count etc.
+
+Kind of actions
+- Actions to view data in the console
+- Actions to collect data to native objects in the respective language
+- Actions to write to output data sources
+-
 ![](/docs/Overview/10.png)
 
 ## **Narrow and Wide Transformations**
@@ -163,3 +181,5 @@ Actions : Anything which triggers execution of a transformation like show, count
 **Wide Transformations** : Where a shuffle of partitions happens . E.g. groupby(), orderby() leads data to be read from many partitions combine them and then written to disk .
 
 ![](/docs/Overview/11.png)
+
+## An End-to-End Example
