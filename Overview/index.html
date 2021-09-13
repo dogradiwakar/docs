@@ -378,6 +378,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#an-end-to-end-example" class="md-nav__link">
+    An End-to-End Example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -490,6 +497,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#an-end-to-end-example" class="md-nav__link">
+    An End-to-End Example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -568,10 +582,13 @@
 <p><strong>Spark Driver :</strong></p>
 <ul>
 <li>Instantiates a spark Session</li>
+<li>Maintains information about the spark application.</li>
+<li>It’s the heart of a Spark Application and maintains all relevant information during the lifetime of   the application.</li>
 <li>It Communicates with cluster manager , requests resources from Cluster Manager for spark execution (JVM) , transforms spark operations into DAG, schedules operations and co-ordinates with executors .</li>
 </ul>
 <p><strong>Spark Session</strong></p>
 <ul>
+<li>The Spark application is controlled using SparkSession.</li>
 <li>Uniform conduit for all spark operations and data</li>
 <li>Used for creating JVM parameters , define Dataframe , Datasets , read data sources , access catalog metadata and issues SQL queries .</li>
 <li>Entry point for all Spark functionality</li>
@@ -595,13 +612,17 @@
 <ul>
 <li>Runs on each worker node in the cluster</li>
 <li>Communicates with driver program and execute tasks on the worker nodes</li>
+<li>They have 2 major responsibilities</li>
+<li>Execute Code assigned to it by the driver</li>
+<li>Reporting state of computation on that executor back to the driver node .</li>
 </ul>
 <h2 id="distributed-data-and-partitions"><strong>Distributed Data and Partitions</strong><a class="headerlink" href="#distributed-data-and-partitions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Actual Physical data is stored as partitions</li>
+<li>Actual Physical data is stored as partitions. It is a collection of rows that sit on one physical machine in your cluster.</li>
 <li>Spark treats each partition as a dataframe in memory</li>
 <li>Spark Executor reads the data from its closest partition</li>
 <li>Partitioning allows parallelism as Each core in partition is assigned to its own data partition to work with .</li>
+<li>If you have one partition, Spark will have a parallelism of only one, even if you have thousands of executors. If you have many partitions but only one executor, Spark will still have a parallelism of only one because there is only one computation resource.</li>
 </ul>
 <p><img alt="" src="/docs/Overview/4.png" /></p>
 <p>Partitioning allows efficient parallelism . In distributed environment spark executor reads data from the nearest partition allowing efficient parallelism .
@@ -633,14 +654,21 @@ Each stage is comprised of multiple tasks which is a unit of execution which get
 <p>For an executor with 16 core 16 or more tasks would run working on 16 or more partitions in parallel .
 <img alt="" src="/docs/Overview/9.png" /></p>
 <h2 id="transformations-actions-and-lazy-executions"><strong>Transformations Actions and Lazy Executions</strong><a class="headerlink" href="#transformations-actions-and-lazy-executions" title="Permanent link">&para;</a></h2>
-<p>Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe</p>
-<p>All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .
-Actions : Anything which triggers execution of a transformation like show, count etc.
+<p>Transformations transform a spark dataframe into a new dataframe without altering the original data as it is immutable . E.g. a select() or a filter() command will not change the original dataframe but will return a new dataframe.</p>
+<p>Transformations are the core of how you express your business logic using Spark.</p>
+<p>All transformations are evaluated lazily aka the results are not computed immediately but are recorded which allows spark to rearrange the transformations , optimize them into stages for efficient execution . Lazy evaluation allows spark to record transformations until an action is invoked . Each transformation produces a new dataframe .</p>
+<p>Actions : Anything which triggers execution of a transformation like show, count etc.</p>
+<p>Kind of actions
+- Actions to view data in the console
+- Actions to collect data to native objects in the respective language
+- Actions to write to output data sources
+-
 <img alt="" src="/docs/Overview/10.png" /></p>
 <h2 id="narrow-and-wide-transformations"><strong>Narrow and Wide Transformations</strong><a class="headerlink" href="#narrow-and-wide-transformations" title="Permanent link">&para;</a></h2>
 <p><strong>Narrow Transformation</strong> : Where a single output is partition can be computed from a single input partition . E.g. filter(), contains() operate on single partition .</p>
 <p><strong>Wide Transformations</strong> : Where a shuffle of partitions happens . E.g. groupby(), orderby() leads data to be read from many partitions combine them and then written to disk .</p>
 <p><img alt="" src="/docs/Overview/11.png" /></p>
+<h2 id="an-end-to-end-example">An End-to-End Example<a class="headerlink" href="#an-end-to-end-example" title="Permanent link">&para;</a></h2>
                 
               
               
