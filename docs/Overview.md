@@ -183,3 +183,75 @@ Kind of actions
 ![](/docs/Overview/11.png)
 
 ## **An End-to-End Example**
+
+We’ll use Spark to analyze some [flight data](https://github.com/databricks/Spark-The-Definitive-Guide/tree/master/data/flight-data) from the United States Bureau of Transportation statistics.
+
+Below is how data looks in csv file
+
+![](/docs/Overview/12.png)
+```Python
+$ head /data/flight-data/csv/2015-summary.csv
+```
+```Python
+DEST_COUNTRY_NAME,ORIGIN_COUNTRY_NAME,count
+United States,Romania,15
+United States,Croatia,1
+United States,Ireland,344
+```
+
+We will use below code to read the csv into a spark Dataframe
+
+```Python
+flightData2015 = spark\
+  .read\
+  .option("inferSchema", "true")\
+  .option("header", "true")\
+  .csv("/data/flight-data/csv/2015-summary.csv")
+```
+![](/docs/Overview/13.png)
+
+The Dataframe just created has a set of columns with an unspecified number of rows. The reason the number of rows is unspecified is because reading data is a transformation, and is therefore a lazy operation.
+
+Spark peeked at only a couple of rows of data to try to guess what types each column should be.
+
+Below provides an illustration of the CSV file being read into a Dataframe and then being converted into a local array or list of rows.
+
+![](/docs/Overview/14.png)
+
+
+If we perform the take action on the Dataframe, we will be able to see the same results that we saw before when we used the command line:
+flightData2015.take(3)
+
+![](/docs/Overview/15.png)
+
+
+Array([United States,Romania,15], [United States,Croatia...
+
+
+
+Let’s specify some more transformations! Now, let’s sort our data according to the count column, which is an integer type. Below figure illustrates this process. Also Sort does not modify the DataFrame. We use sort as a transformation that returns a new DataFrame by transforming the previous DataFrame.
+
+![](/docs/Overview/16.png)
+
+Nothing happens to the data when we call sort because it’s just a transformation. However, we can see that Spark is building up a plan for how it will execute this across the cluster by looking at the explain plan. We can call explain on any DataFrame object to see the DataFrame’s lineage (or how Spark will execute this query):
+
+flightData2015.sort("count").explain()
+
+
+== Physical Plan ==
+*Sort [count#195 ASC NULLS FIRST], true, 0
++- Exchange rangepartitioning(count#195 ASC NULLS FIRST, 200)
+   +- *FileScan csv [DEST_COUNTRY_NAME#193,ORIGIN_COUNTRY_NAME#194,count#195] ...
+
+You can read explain plans from top to bottom, the top being the end result, and the bottom being the source(s) of data. In this case, take a look at the first keywords. You will see sort, exchange, and FileScan. That’s because the sort of our data is actually a wide transformation because rows will need to be compared with one another.
+
+Now, just like we did before, we can specify an action to kick off this plan. However, before doing that, we’re going to set a configuration. By default, when we perform a shuffle, Spark outputs 200 shuffle partitions. Let’s set this value to 5 to reduce the number of the output partitions from the shuffle:
+
+spark.conf.set("spark.sql.shuffle.partitions", "5")
+flightData2015.sort("count").take(2)
+... Array([United States,Singapore,1], [Moldova,United States,1])
+Below figure illustrates this operation. Notice that in addition to the logical transformations, we include the physical partition count, as well.
+
+
+The logical plan of transformations that we build up defines a lineage for the DataFrame so that at any given point in time, Spark knows how to recompute any partition by performing all of the operations it had before on the same input data. This sits at the heart of Spark’s programming model—functional programming where the same inputs always result in the same outputs when the transformations on that data stay constant.
+We do not manipulate the physical data; instead, we configure physical execution characteristics through things like the shuffle partitions parameter . We ended up with five output partitions because that’s the value we specified in the shuffle partition. You can change this to help control the physical execution characteristics of your Spark jobs. In experimenting with different values, you should see drastically different runtimes. You can monitor the job progress by navigating to the Spark UI on port 4040 to see the physical and logical execution characteristics of your jobs.
