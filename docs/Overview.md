@@ -5,8 +5,9 @@
 
 Hadoop was the first version of distributed computing
 
-Issues with HDFS
+Issues with Hadoop
 
+  - Not Unified You need to use Hive to write SQL , Mahout for ML , Zookeeper as cluster manager etc
   - Hard to manage and administer
   - Batch processing using Map Reduce
   - Large Datasets were written to disk for subsequent stages of operation which meant high i/o.
