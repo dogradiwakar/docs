@@ -43,6 +43,7 @@ Spark’s design philosophy centers around four key characteristics:
 -   The community of Spark developers maintains a list of [third-party Spark packages](https://oreil.ly/2tIVP) as part of the growing ecosystem
 
 Lets Revisit hadoop issues and compare those with Spark :
+
 - Not Unified You need to use Hive to write SQL , Mahout for ML , Zookeeper as cluster manager etc -> Spark is unified with all ML, Streaming , SQL functionalities built in the core itself .
 - Hard to manage and administer -> Spark is easy to Manage and administer
 - Batch processing using Map Reduce -> Spark is must faster than traditional map reduce
