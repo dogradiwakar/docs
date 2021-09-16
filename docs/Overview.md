@@ -12,6 +12,7 @@ Issues with Hadoop
   - Batch processing using Map Reduce
   - Large Datasets were written to disk for subsequent stages of operation which meant high i/o.
   - OK for batch processing but was slow while doing Machine learning / Streaming
+  - No support for multiple languages apart from Java
 
 Spark was created in order to overcome these obstacles .
 
@@ -40,6 +41,14 @@ Spark’s design philosophy centers around four key characteristics:
 -   Decouple storage and computation
 -   Supports many data sources and targets Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more—and process it all in memory.
 -   The community of Spark developers maintains a list of [third-party Spark packages](https://oreil.ly/2tIVP) as part of the growing ecosystem
+
+Lets Revisit hadoop issues and compare those with Spark :
+- Not Unified You need to use Hive to write SQL , Mahout for ML , Zookeeper as cluster manager etc -> Spark is unified with all ML, Streaming , SQL functionalities built in the core itself .
+- Hard to manage and administer -> Spark is easy to Manage and administer
+- Batch processing using Map Reduce -> Spark is must faster than traditional map reduce
+- Large Datasets were written to disk for subsequent stages of operation which meant high i/o.-> Spark writes the data in memory making it much faster
+- OK for batch processing but was slow while doing Machine learning / Streaming-> Spark is used for real time streaming and data processing .
+- No support for multiple languages apart from Java -> Spark supports Python , Java , R, Scala natively
 
 ## **Apache Spark Components as a Unified Stack**
 
