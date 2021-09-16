@@ -553,13 +553,15 @@
 -   Decouple storage and computation
 -   Supports many data sources and targets Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more—and process it all in memory.
 -   The community of Spark developers maintains a list of <a href="https://oreil.ly/2tIVP">third-party Spark packages</a> as part of the growing ecosystem</p>
-<p>Lets Revisit hadoop issues and compare those with Spark :
-- Not Unified You need to use Hive to write SQL , Mahout for ML , Zookeeper as cluster manager etc -&gt; Spark is unified with all ML, Streaming , SQL functionalities built in the core itself .
-- Hard to manage and administer -&gt; Spark is easy to Manage and administer
-- Batch processing using Map Reduce -&gt; Spark is must faster than traditional map reduce
-- Large Datasets were written to disk for subsequent stages of operation which meant high i/o.-&gt; Spark writes the data in memory making it much faster
-- OK for batch processing but was slow while doing Machine learning / Streaming-&gt; Spark is used for real time streaming and data processing .
-- No support for multiple languages apart from Java -&gt; Spark supports Python , Java , R, Scala natively</p>
+<p>Lets Revisit hadoop issues and compare those with Spark :</p>
+<ul>
+<li>Not Unified You need to use Hive to write SQL , Mahout for ML , Zookeeper as cluster manager etc -&gt; Spark is unified with all ML, Streaming , SQL functionalities built in the core itself .</li>
+<li>Hard to manage and administer -&gt; Spark is easy to Manage and administer</li>
+<li>Batch processing using Map Reduce -&gt; Spark is must faster than traditional map reduce</li>
+<li>Large Datasets were written to disk for subsequent stages of operation which meant high i/o.-&gt; Spark writes the data in memory making it much faster</li>
+<li>OK for batch processing but was slow while doing Machine learning / Streaming-&gt; Spark is used for real time streaming and data processing .</li>
+<li>No support for multiple languages apart from Java -&gt; Spark supports Python , Java , R, Scala natively</li>
+</ul>
 <h2 id="apache-spark-components-as-a-unified-stack"><strong>Apache Spark Components as a Unified Stack</strong><a class="headerlink" href="#apache-spark-components-as-a-unified-stack" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="/docs/Overview/overview.png" /></p>
 <p>Spark has Four major components :</p>
