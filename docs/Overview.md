@@ -12,7 +12,7 @@ Issues with Hadoop
   - Batch processing using Map Reduce
   - Large Datasets were written to disk for subsequent stages of operation which meant high i/o.
   - OK for batch processing but was slow while doing Machine learning / Streaming
-  - No support for multiple languages apart from Java
+
 
 Spark was created in order to overcome these obstacles .
 
@@ -51,7 +51,7 @@ Spark’s design philosophy centers around four key characteristics:
 - Batch processing using Map Reduce -> Spark is must faster than traditional map reduce
 - Large Datasets were written to disk for subsequent stages of operation which meant high i/o.-> Spark writes the data in memory making it much faster
 - OK for batch processing but was slow while doing Machine learning / Streaming-> Spark is used for real time streaming and data processing .
-- No support for multiple languages apart from Java -> Spark supports Python , Java , R, Scala natively
+
 
 ## **Apache Spark Components as a Unified Stack**
 
