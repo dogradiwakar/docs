@@ -16,6 +16,8 @@ Issues with Hadoop
 
 Spark was created in order to overcome these obstacles .
 
+## **What is Spark?**
+
 [Apache Spark](https://spark.apache.org/) is a unified engine designed for large-scale distributed data processing, on premises in data centers or in the cloud.
 
 Spark provides in-memory storage for intermediate computations, making it much faster than Hadoop Map Reduce. It incorporates libraries with composable APIs for machine learning (MLlib), SQL for interactive queries (Spark SQL), stream processing (Structured Streaming) for interacting with real-time data, and graph processing (GraphX).
@@ -42,7 +44,7 @@ Spark’s design philosophy centers around four key characteristics:
 -   Supports many data sources and targets Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more—and process it all in memory.
 -   The community of Spark developers maintains a list of [third-party Spark packages](https://oreil.ly/2tIVP) as part of the growing ecosystem
 
-Lets Revisit hadoop issues and compare those with Spark :
+## **Lets Revisit hadoop issues and compare those with Spark :**
 
 - Not Unified You need to use Hive to write SQL , Mahout for ML , Zookeeper as cluster manager etc -> Spark is unified with all ML, Streaming , SQL functionalities built in the core itself .
 - Hard to manage and administer -> Spark is easy to Manage and administer
