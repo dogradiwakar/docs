@@ -1,7 +1,7 @@
 site_name: Apache Spark
 site_url: https://dogradiwakar.github.io/
 site_author: Diwakar Dogra
-site_description: 
+site_description:
 
 repo_name: docs
 repo_url: https://github.com/dogradiwakar/docs
@@ -9,17 +9,17 @@ edit_uri: edit/main/docs/
 
 copyright: Copyright &copy; 2021 Diwakar Dogra
 
-   
-    
+
+
 nav:
-  #- Home: index.md
+  - Home: index.md
   - Apache Spark:
     - Overview: Overview.md
     - GettingStarted: GettingStarted.md
     - Jupyter Notebook Integration: JupyterNotebookIntegration.md
-    
-    
-    
+
+
+
 theme:
   name: material
   features:
@@ -73,7 +73,7 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.tilde
 
-      
+
 extra:
   analytics:
     provider: google
