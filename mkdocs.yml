@@ -12,8 +12,12 @@ copyright: Copyright &copy; 2021 Diwakar Dogra
 
 
 nav:
-  - Home: index.md
+  - Home: Overview.md
   - Apache Spark:
+    - Overview: Overview.md
+    - GettingStarted: GettingStarted.md
+    - Jupyter Notebook Integration: JupyterNotebookIntegration.md
+  - Apache Spark1:
     - Overview: Overview.md
     - GettingStarted: GettingStarted.md
     - Jupyter Notebook Integration: JupyterNotebookIntegration.md
