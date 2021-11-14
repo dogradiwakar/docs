@@ -17,10 +17,6 @@ nav:
     - Overview: Overview.md
     - GettingStarted: GettingStarted.md
     - Jupyter Notebook Integration: JupyterNotebookIntegration.md
-  - Apache Spark1:
-    - Overview: Overview.md
-    - GettingStarted: GettingStarted.md
-    - Jupyter Notebook Integration: JupyterNotebookIntegration.md
 
 
 
