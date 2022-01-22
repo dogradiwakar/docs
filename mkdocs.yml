@@ -17,6 +17,9 @@ nav:
     - Overview: Overview.md
     - GettingStarted: GettingStarted.md
     - Jupyter Notebook Integration: JupyterNotebookIntegration.md
+  - Snowflake:
+    - Overview: Secure Data Sharing SnowFlake 70f8b90e87be44ac86db45481ea930cc.md
+    
 
 
 
